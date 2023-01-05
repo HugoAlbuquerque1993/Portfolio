@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head>
+<body id="allContent">
+    <header>
+        <h1 id="headh1">HHNA</h1>
+        <nav id="showMenu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Quem sou</a></li>
+                <li><a href="#">Projetos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <i class="material-icons" onclick="openMenu()">menu</i>
+    </header>
+    <main id="mainCont">
+        <section>            
+            <div id="h2div">
+                <h2>
+                    <span id="front">FRONT-END</span> <br>
+                    <span id="web">WEB DEVELOPER</span>
+                </h2>
+            </div>
+            <div id="txtdiv">
+                <p>Olá! Tudo bem? Meu nome é Hugo Albuquerque, estudante e entusiasta na área de tecnologia, atualmente aprimorando meus conhecimento em HTML5 e CSS3. Com minha experiência em JavaScript para navegadores, pretendo aprender a manuzear o React JS para complementar minhas habilidades Front-End.</p>
+            </div>
+            <div id="imgdiv">
+                <img src="img/icon1.png" alt="icon1">
+            </div>            
+        </section>
+    </main>
+    <div id="back"></div>
+    <script>
+        var verMenu = "no"
+        function openMenu(){
+            if (verMenu == "no"){
+                showMenu.style.transform = "translateX(0px)"
+                back.style.display = "block"
+                headh1.style.textShadow = "0 0 20px red"
+                return verMenu = "yes"
+            } else {
+                showMenu.style.transform = "translateX(-30vw)"
+                back.style.display = "none"
+                headh1.style.textShadow = "0 0 20px blue"
+                return verMenu = "no"
+            }
+        }
+    </script>
+</body>
+</html>
