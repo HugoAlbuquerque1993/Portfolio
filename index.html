@@ -4,20 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portifólio</title>
-		<link rel="stylesheet" href="styles/main.css" />
+		<title>Hugo Albuquerque - Portifólio</title>
+		<link rel="shortcut icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/256/22221-cat-icon.png" type="image/x-icon" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="styles/index.css" />
+		<link rel="stylesheet" href="./styles/neonBtn.css" />
 	</head>
 	<body>
 		<header id="myHeader">
-			<h1>HHNA</h1>
+			<h2 class="pulse">HHNA</h2>
 			<nav>
 				<ul>
-					<li><a href="#Home">Home</a></li>
-					<li><a href="#Perfil">Perfil</a></li>
-					<li><a href="#Projetos">Projetos</a></li>
-					<li><a href="#Contato">Contato</a></li>
+					<li>
+						<a href="#Home" class="neonBtn"> <span></span><span></span><span></span><span></span> Home</a>
+					</li>
+					<li>
+						<a href="#Perfil" class="neonBtn"> <span></span><span></span><span></span><span></span> Perfil</a>
+					</li>
+					<li>
+						<a href="#Projetos" class="neonBtn"> <span></span><span></span><span></span><span></span> Projetos</a>
+					</li>
+					<li>
+						<a href="#Contato" class="neonBtn"> <span></span><span></span><span></span><span></span> Contato</a>
+					</li>
 				</ul>
 			</nav>
 			<!-- <i class="material-icons" onclick="openMenu()">menu</i> -->
@@ -25,17 +35,27 @@
 
 		<main>
 			<section id="Home">
-				<h2>Olá! Eu me chamo</h2>
-				<h1>Hugo Albuquerque</h1>
-				<h2>
-					<span class="material-symbols-outlined"> done </span>
-					Programador
-				</h2>
-
-				<h2>
-					<span class="material-symbols-outlined"> done </span>
-					Front-End Web Developer
-				</h2>
+				<div>
+					<h1>Hugo Albuquerque</h1>
+					<ul>
+						<h2>
+							<span class="material-symbols-outlined"> done </span>
+							Programador
+						</h2>
+						<h2>
+							<span class="material-symbols-outlined"> done </span>
+							Front-End
+						</h2>
+						<h2>
+							<span class="material-symbols-outlined"> done </span>
+							Web Developer
+						</h2>
+						<h2>
+							<span class="material-symbols-outlined"> done </span>
+							React JS
+						</h2>
+					</ul>
+				</div>
 
 				<img id="imgCat" src="https://i.pinimg.com/originals/85/70/28/857028bb3b06a975a3b3dffc5b7f2018.gif" />
 
@@ -45,12 +65,12 @@
 			</section>
 
 			<section id="Perfil">
-				<h1>Perfil</h1>
-				<h2>Sobre mim:</h2>
+				<h2>Perfil</h2>
+				<h3>Sobre mim:</h3>
 				<p>Olá! Meu nome é Hugo, estudante e entusiasta na área de tecnologia. Atualmente já estou implementando meus conhecimentos de HTML5, CSS3 e JavaScript em projetos reais. Estou estudando React JS para conseguir entregar projetos de melhor qualidade e praticidade.</p>
 
-				<h2>Objetivos profissionais:</h2>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius velit fuga amet fugit quae quaerat autem vel soluta dolorem, sed aperiam tempore itaque blanditiis sit repudiandae mollitia obcaecati at nesciunt!</p>
+				<h2>Objetivo:</h2>
+				<p>Fazer parte de uma equipe de desenvolvedores unida, com objetivos claros e trabalhando em conjunto para encontrar as melhores soluções, isso é essencial para o sucesso de um projeto de software. Além de permitir a troca de ideias e conhecimentos, essa colaboração resulta em experiência valiosa para cada membro da equipe, culminando na entrega de um produto final de excelência aos clientes.</p>
 			</section>
 
 			<span class="material-symbols-outlined goDown" id="toPerfil"> expand_more </span>

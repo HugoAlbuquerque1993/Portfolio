@@ -24,6 +24,14 @@ body {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
+::-webkit-scrollbar {
+	width: 8px;
+	background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+	background: #515151;
+	border-radius: 4px;
+}
 header {
 	display: flex;
 	position: absolute;
@@ -50,29 +58,39 @@ header.slideHeader {
 	background-color: #333;
 	transition: 0.5s;
 }
-header > h1 {
+header > h2 {
+	display: flex;
+	justify-content: center;
+	width: 160px;
 	font-family: var(--font3);
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-shadow: 0 0 20px blue;
+	margin-bottom: 0;
+	border-radius: 5px 15px;
+	cursor: none;
+	transition: .5s;
+}
+header.slideHeader > h2 {
+	font-size: 2rem;
 }
 header nav {
 	display: block;
+	justify-content: space-between;
+	align-items: center;
 	position: relative;
 	min-width: 450px;
 	width: 45vw;
+	height: fit-content;
 	font-size: 0.9rem;
 	text-transform: uppercase;
 }
-
 header ul {
 	display: flex;
+	width: 100%;
 	justify-content: space-between;
 	list-style: none;
 	text-align: center;
-}
-header li {
-	margin: 0 5px;
-	padding: 40px 0;
+	margin-bottom: 0;
 }
 header a {
 	text-decoration: none;
@@ -92,27 +110,36 @@ main {
 main #Home {
 	position: relative;
 	width: 100vw;
-	height: 95vh;
-	background: black url(../img/TechnologyBackground.jpg) no-repeat center center fixed;
+	height: 98vh;
+	background: black url(../img/computer-room01.jpg) no-repeat center center fixed;
 	background-size: cover;
-	box-shadow: inset -2px -2px 10px #ffffff90;
+	box-shadow: inset -5px -5px 10px #ffffff90;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
-main #Home > * {
-	z-index: 1;
+#Home > div {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	background-color: #222222d0;
+	padding: 20px;
+	border-radius: 20px 50px;
+	box-shadow: 5px 5px 10px #ffffff90;
+}
+#Home > div > ul {
+	margin: 0 auto;
 }
 #Home h1 {
 	font-size: 2rem;
-	text-shadow: 5px 5px 5px #00000080;
-	padding: 20px;
+	padding: 10px 20px;
 	border-radius: 10px;
 	font-family: var(--font3);
 	letter-spacing: 2px;
 	color: lightgreen;
+	cursor: context-menu;
 }
 #Home h2 {
 	display: flex;
@@ -123,7 +150,7 @@ main #Home > * {
 }
 #Home img {
 	position: absolute;
-	width: 350px;
+	width: 150px;
 	z-index: 0;
 	opacity: 0;
 	transition: 1s;
@@ -144,11 +171,11 @@ main .goDown {
 	position: absolute;
 	cursor: pointer;
 	padding: 10px;
-	background-color: #00000080;
+	background-color: #000000;
 	border-radius: 50%;
 	bottom: 5%;
 	animation: toDown 2s infinite ease-in-out;
-	opacity: 0.7;
+	opacity: 0.6;
 	user-select: none;
 }
 @keyframes toDown {
@@ -171,9 +198,15 @@ main #Perfil {
 	padding: 40px;
 	color: #8ae3eb;
 }
-main #Perfil h1 {
+main #Perfil h2 {
 	margin-bottom: 20px;
+	letter-spacing: 3px;
 	font-size: 2rem;
+	font-weight: bold;
+}
+main #Perfil h3 {
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 main #Perfil p {
 	width: 700px;
