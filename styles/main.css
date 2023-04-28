@@ -1,127 +1,182 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@900&family=Bungee+Shade&family=Cinzel+Decorative:wght@400;700&family=Lexend+Tera&family=Playfair+Display&display=swap');
-:root{
-    --font1: 'Barlow Semi Condensed', sans-serif;
-    --font2: 'Bungee Shade', cursive;
-    --font3: 'Cinzel Decorative', cursive;
-    --font4: 'Lexend Tera', sans-serif;
-    --font5: 'Playfair Display', serif;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@900&family=Bungee+Shade&family=Cinzel+Decorative:wght@400;700&family=Lexend+Tera&family=Playfair+Display&display=swap");
+:root {
+	--font1: "Barlow Semi Condensed", sans-serif;
+	--font2: "Bungee Shade", cursive;
+	--font3: "Cinzel Decorative", cursive;
+	--font4: "Lexend Tera", sans-serif;
+	--font5: "Playfair Display", serif;
+	--cor1: yellow;
 }
-*{
-    padding: 0; 
-    margin: 0;
-    box-sizing: border-box;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: var(--font4);
 }
-html, body{
-    background: black url(../img/background1.jpg) no-repeat center center fixed;
-    background-size: cover;
-    color: rgb(255, 255, 255);
-    font-size: 1.1em;
-    font-family: var(--font5);
-    width: 100vw;
-    height: 100vh;
+html,
+body {
+	font-family: var(--font5);
+	position: relative;
+	width: 100vw;
+	color: #fff;
+	background-color: #222;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
-header{
-    display: flex;
-    position: relative;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.15));
-    align-items: center;
-    height: 15vh;
+header {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(179deg, rgba(0, 0, 0, 0.95) 5%, rgba(0, 0, 0, 0.15) 95%);
+	align-items: center;
+	justify-content: space-around;
+	width: 100vw;
+	height: 15vh;
+	transition: 0.5s;
+	animation: headerFade 2s ease-in-out;
+	z-index: 2;
 }
-header #headh1{
-    font-family: var(--font3);
-    font-size: 2.5rem;
-    margin: auto;
-    text-shadow: 0 0 20px blue;
-    z-index: 2;
+@keyframes headerFade {
+	0% { transform: translateY(-100%); opacity: 0; }
+	100% { transform: translateY(0%); opacity: 1;}
 }
-header i.material-icons{
-    position: absolute;
-    left: 12vw;
-    font-size: 2rem;
-    z-index: 2;
+header.slideHeader {
+	box-shadow: 2px 2px 10px #00000090, 2px 2px 30px #00000090;
+	color: gold;
+	position: fixed;
+	height: 8vh;
+	background-color: #333;
+	transition: 0.5s;
 }
-header i.material-icons:hover{
-    cursor: pointer;
-    color: royalblue;
+header > h1 {
+	font-family: var(--font3);
+	font-size: 2rem;
+	text-shadow: 0 0 20px blue;
 }
-/* mostrar menu  */
-header nav{
-    display: block;
-    position: absolute;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.40), black);
-    width: 30vw;
-    top: 0px;
-    padding-top: 80px;
-    height: 100vh;
-    transform: translateX(-30vw);
-    transition: 1s ease;
-    z-index: 2;
-}
-header ul{
-    display: block;
-    list-style: none;
-    text-align: center;
-}
-header li{
-    margin: 0 5px;
-    padding: 40px 0;
-    z-index: 2;
-}
-header a{
-    text-decoration: none;
-    color: white;
-    z-index: 2;
-}
-header a:hover{
-    color: royalblue;
+header nav {
+	display: block;
+	position: relative;
+	min-width: 450px;
+	width: 45vw;
+	font-size: 0.9rem;
+	text-transform: uppercase;
 }
 
-
-
-section{
-    display: flex;
-    width: 100vw;
-    height: 85vh;
-    flex-direction: column;
-    justify-content: space-between;
+header ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	text-align: center;
 }
-main #h2div{
-    font-family: var(--font4);
-    margin-top: 5vh;
-    margin-left: 8vw;
-    width: fit-content;
-    font-size: 1rem;
-    text-shadow: 0 0 15px #46B0BB;
-    color: #8AE3EB;
+header li {
+	margin: 0 5px;
+	padding: 40px 0;
 }
-main p{
-    text-indent: 25px;
-    margin: 0 auto;
-    text-align: justify;
-    width: 85vw;
-    height: fit-content;
-    font-size: 1.2rem;
+header a {
+	text-decoration: none;
+	color: white;
 }
-main #imgdiv{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 0;
-}
-main img{
-    width: 300px;
+header a:hover {
+	color: royalblue;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+main #Home {
+	position: relative;
+	width: 100vw;
+	height: 95vh;
+	background: black url(../img/TechnologyBackground.jpg) no-repeat center center fixed;
+	background-size: cover;
+	box-shadow: inset -2px -2px 10px #ffffff90;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+main #Home > * {
+	z-index: 1;
+}
+#Home h1 {
+	font-size: 2rem;
+	text-shadow: 5px 5px 5px #00000080;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: var(--font3);
+	letter-spacing: 2px;
+	color: lightgreen;
+}
+#Home h2 {
+	display: flex;
+	text-align: center;
+	font-family: var(--font4);
+	font-size: 1.2rem;
+	color: #8ae3eb;
+}
+#Home img {
+	position: absolute;
+	width: 350px;
+	z-index: 0;
+	opacity: 0;
+	transition: 1s;
+}
+#Home #imgCod {
+	top: 10%;
+	right: 5%;
+}
+#Home #imgCat {
+	transform: scaleX(-1);
+	bottom: 5%;	
+	left: 5%;
+}
+#Home img:hover {
+	opacity: 1;
+}
+main .goDown {
+	position: absolute;
+	cursor: pointer;
+	padding: 10px;
+	background-color: #00000080;
+	border-radius: 50%;
+	bottom: 5%;
+	animation: toDown 2s infinite ease-in-out;
+	opacity: 0.7;
+	user-select: none;
+}
+@keyframes toDown {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
 
-#back{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.831);
-    width: 100%;
-    height: 100%;
-    display: none;
-    z-index: 1;
-  }
+main #Perfil {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 95vh;
+	padding: 40px;
+	color: #8ae3eb;
+}
+main #Perfil h1 {
+	margin-bottom: 20px;
+	font-size: 2rem;
+}
+main #Perfil p {
+	width: 700px;
+	margin-bottom: 50px;
+	text-indent: 30px;
+}
