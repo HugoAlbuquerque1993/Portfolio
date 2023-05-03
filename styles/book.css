@@ -12,7 +12,16 @@
 .book {
 	transition: opacity 0.4s 0.2s;
 	perspective: 250vw;
+	position: relative;
+	transform: translateX(-25%);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	transition: .5s;
+}
+.book.toRight {
+	transform: translateX(0);
+}
+.book.toLeft {
+	transform: translateX(25%);
 }
 .book .pages {
 	width: 58vw;
@@ -39,7 +48,7 @@
 	position: absolute;
 	top: 0;
 	transform-origin: 0 0;
-	transition: transform 0.9s;
+	transition: transform 0.8s;
 	transform-style: preserve-3d;
 	cursor: grab;
 	user-select: none;
