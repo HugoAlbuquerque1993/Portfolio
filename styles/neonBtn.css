@@ -4,14 +4,15 @@
 	--cor1: #d0d000;
 	--cor2: #9FB6CD;
 }
+
 .pulse:hover {
   animation: pulse 1s;
   box-shadow: inset 0 0 0 1em transparent;
 }
-
 @keyframes pulse {
   0% { box-shadow: inset 0 0 0 0 #ffffff40; }
 }
+
 .neonBtn {
 	display: block;
 	position: relative;
@@ -38,7 +39,7 @@
 	color: var(--back2);
 	background-color: var(--cor2);
 	box-shadow: 0 0 10pxvar (--cor2), 0 0 40pxvar (--cor2), 0 0 80pxvar (--cor2);
-	transition-delay: 1.2s;
+	transition-delay: 1s;
 }
 
 .neonBtn span {

@@ -12,11 +12,10 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: var(--font4);
 }
 html,
 body {
-	font-family: var(--font5);
+	font-family: var(--font4);
 	position: relative;
 	width: 100vw;
 	color: #fff;
@@ -43,7 +42,7 @@ header {
 	width: 100vw;
 	height: 15vh;
 	transition: 0.5s;
-	animation: headerFade 2s ease-in-out;
+	animation: headerFade 1.5s ease-in-out;
 	z-index: 2;
 }
 @keyframes headerFade {
@@ -53,9 +52,8 @@ header {
 header.slideHeader {
 	box-shadow: 2px 2px 10px #00000090, 2px 2px 30px #00000090;
 	color: gold;
-	height: 8vh;
+	height: 7vh;
 	background-color: #333;
-	transition: 0.5s;
 }
 header > h2 {
 	display: flex;
@@ -63,6 +61,7 @@ header > h2 {
 	font-family: var(--font3);
 	font-size: 2.5rem;
 	text-shadow: 0 0 20px blue;
+	width: 150px;
 	margin-bottom: 0;
 	border-radius: 5px 15px;
 	padding: 5px 10px;
@@ -99,7 +98,7 @@ main {
 main #Home {
 	position: relative;
 	width: 100vw;
-	height: 98vh;
+	height: 99vh;
 	background: #111 url(../img/back01.jpg) no-repeat center center fixed;
 	background-size: cover;
 	box-shadow: inset -5px -5px 10px #ffffff90;
@@ -109,14 +108,19 @@ main #Home {
 	align-items: center;
 	text-align: center;
 }
-main #Home > div {
+main #Home .centerBox {
 	display: flex;
 	flex-direction: column;
 	align-items: start;
 	background-color: #222222d0;
 	padding: 20px;
 	border-radius: 20px 50px;
-	box-shadow: 5px 5px 10px #ffffff90;
+	box-shadow: 5px 5px 10px #ffffff80;
+	animation: fadeIn 3s ease;
+}
+@keyframes fadeIn {
+	0% { opacity: 0%;}
+	100% { opacity: 100%;}
 }
 main #Home h1 {
 	font-size: 2rem;
@@ -146,7 +150,6 @@ main #Home img:hover {
 }
 .goDown {
 	position: absolute;
-	left: 50%;
 	bottom: 5%;
 	cursor: pointer;
 	padding: 10px;
@@ -160,13 +163,13 @@ main #Home img:hover {
 }
 @keyframes toDown {
 	0% {
-		transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) ;
 	}
 	50% {
-		transform: translateY(10px) translateX(-50%);
+		transform: translateY(10px) ;
 	}
 	100% {
-		transform: translateY(0px) translateX(-50%);
+		transform: translateY(0px) ;
 	}
 }
 
@@ -174,11 +177,14 @@ main #Perfil {
 	display: flex;
 	position: relative;
 	flex-direction: column;
+	align-items: center;
 	width: 100vw;
-	height: 98vh;
 	line-height: 20px;
 	padding: 50px;
 	color: #8ae3eb;
+}
+main #Perfil article {
+	width: 100%;
 }
 main #Perfil h2 {
 	margin-bottom: 20px;
@@ -200,10 +206,12 @@ main #Projetos {
 	background: url(../img/back02.jpg) no-repeat center center fixed;
 	background-size: cover;
 	width: 100vw;
-	height: 98vh;
 }
 main #Projetos .projectsTop {
 	display: flex;
 	justify-content: space-around;
 	height: 98vh;
+}
+main #Projetos .projectsTop .card img {
+	max-width: 300px;
 }
