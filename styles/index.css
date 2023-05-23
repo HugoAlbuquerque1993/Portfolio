@@ -19,7 +19,7 @@ body {
 	position: relative;
 	width: 100vw;
 	color: #fff;
-	background-color: #222;
+	background-image: linear-gradient(90deg, #222, #333);
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 }
@@ -173,6 +173,23 @@ main #Home img:hover {
 	}
 }
 
+main #Projetos {
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	position: relative;
+	background-size: cover;
+	width: 100vw;
+}
+main #Projetos .projectsTop {
+	display: flex;
+	justify-content: space-around;
+	height: 98vh;
+}
+main #Projetos .projectsTop .card img {
+	max-width: 300px;
+}
+
 main #Perfil {
 	display: flex;
 	position: relative;
@@ -182,6 +199,7 @@ main #Perfil {
 	line-height: 20px;
 	padding: 50px;
 	color: #8ae3eb;
+	background: url(../img/back02.jpg) no-repeat center center fixed;
 }
 main #Perfil article {
 	width: 100%;
@@ -196,22 +214,4 @@ main #Perfil p {
 	width: 700px;
 	margin-bottom: 50px;
 	text-indent: 30px;
-}
-
-main #Projetos {
-	display: flex;
-	flex-direction: column;
-	padding: 50px;
-	position: relative;
-	background: url(../img/back02.jpg) no-repeat center center fixed;
-	background-size: cover;
-	width: 100vw;
-}
-main #Projetos .projectsTop {
-	display: flex;
-	justify-content: space-around;
-	height: 98vh;
-}
-main #Projetos .projectsTop .card img {
-	max-width: 300px;
 }
