@@ -46,14 +46,23 @@ header {
 	z-index: 2;
 }
 @keyframes headerFade {
-	0% { transform: translateY(-100%); opacity: 0; }
-	100% { transform: translateY(0%); opacity: 1;}
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
 }
 header.slideHeader {
 	box-shadow: 2px 2px 10px #00000090, 2px 2px 30px #00000090;
 	color: gold;
 	height: 7vh;
 	background-color: #333;
+}
+header .menuIcon {
+	display: none;
 }
 header > h2 {
 	display: flex;
@@ -66,7 +75,7 @@ header > h2 {
 	border-radius: 5px 15px;
 	padding: 5px 10px;
 	cursor: none;
-	transition: .5s;
+	transition: 0.5s;
 }
 header nav {
 	display: block;
@@ -113,14 +122,18 @@ main #Home .centerBox {
 	flex-direction: column;
 	align-items: start;
 	background-color: #222222d0;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 20px 50px;
 	box-shadow: 5px 5px 10px #ffffff80;
 	animation: fadeIn 3s ease;
 }
 @keyframes fadeIn {
-	0% { opacity: 0%;}
-	100% { opacity: 100%;}
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
 }
 main #Home h1 {
 	font-size: 2rem;
@@ -163,13 +176,13 @@ main #Home img:hover {
 }
 @keyframes toDown {
 	0% {
-		transform: translateY(0px) ;
+		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(10px) ;
+		transform: translateY(10px);
 	}
 	100% {
-		transform: translateY(0px) ;
+		transform: translateY(0px);
 	}
 }
 
@@ -214,4 +227,61 @@ main #Perfil p {
 	width: 700px;
 	margin-bottom: 50px;
 	text-indent: 30px;
+}
+
+@media (max-width: 600px) {
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 30px;
+		width: 100vw;
+		height: 15vh;
+		min-height: 50px;
+		transition: 0.5s;
+		animation: headerFade 1.5s ease-in-out;
+		z-index: 2;
+	}
+	header.slideHeader {
+		height: 8vh;
+	}
+	header nav {
+		position: absolute;
+		top: 0px;
+		left: 100vw;
+		transition: 0.5s;
+		background-color: #00000080;
+		width: 100vw;
+		height: 100vh;
+	}
+	header ul {
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+		flex-direction: column;
+		margin-top: 25px;
+	}
+	header #closeMenu {
+		align-self: flex-end;
+		margin-right: 6.3%;
+	}
+	header .menuIcon {
+		display: flex;
+		font-size: 2.5rem;
+		transition: 0.5s;
+		cursor: pointer;
+		padding: 5px;
+		border-radius: 50%;
+	}
+	header .menuIcon:hover {
+		background-color: #000000;
+	}
+
+	main #Home img {
+		position: absolute;
+		width: 100px;
+		z-index: 0;
+		opacity: 0;
+		transition: 1s;
+	}
 }

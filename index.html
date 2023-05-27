@@ -17,8 +17,9 @@
 	<body>
 		<header id="myHeader">
 			<h2 class="pulse">HHNA</h2>
-			<nav>
+			<nav class="navBar">
 				<ul>
+					<i class="material-icons menuIcon" id="closeMenu">close</i>
 					<li>
 						<a href="#Home" class="neonBtn"> <span></span><span></span><span></span><span></span> Home</a>
 					</li>
@@ -33,7 +34,7 @@
 					</li>
 				</ul>
 			</nav>
-			<!-- <i class="material-icons" onclick="openMenu()">menu</i> -->
+			<i class="material-icons menuIcon" id="openMenu">menu</i>
 		</header>
 
 		<main>
@@ -174,6 +175,29 @@
 				} else {
 					myHeader.removeAttribute("class", "slideHeader")
 					document.querySelector("header > h2").style.fontSize = "2.5rem"
+				}
+			}
+
+			const navBar = document.querySelector(".navBar")
+			const openMenu = document.querySelector("#openMenu")
+			var gate = false
+			openMenu.addEventListener("click", () => {
+				navBar.style.left = 0
+				openMenu.style.opacity = 0
+				openMenu.style.zIndex = -1
+				gate = true
+			})
+
+			const closeMenuArr = [...document.querySelectorAll(".navBar > ul > *")]
+			closeMenuArr.forEach((el) => {
+				el.addEventListener("click", closeMenuFunc)
+			})
+			function closeMenuFunc(e) {
+				if (gate == true) {
+					navBar.style.left = "100vw"
+					openMenu.style.opacity = 1
+					openMenu.style.zIndex = 0
+					gate = false
 				}
 			}
 		</script>
