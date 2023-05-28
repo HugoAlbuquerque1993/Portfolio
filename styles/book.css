@@ -1,168 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@900&family=Bungee+Shade&family=Cinzel+Decorative:wght@400;700&family=Lexend+Tera&family=Playfair+Display&family=Style+Script&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@900&family=Bungee+Shade&family=Cinzel+Decorative:wght@400;700&family=Lexend+Tera&family=Playfair+Display&family=Style+Script&family=VT323&display=swap");
 :root {
-	--font1: 'Barlow Semi Condensed', sans-serif;
-	--font2: 'Bungee Shade', cursive;
-	--font3: 'Cinzel Decorative', cursive;
-	--font4: 'Lexend Tera', sans-serif;
-	--font5: 'Playfair Display', serif;
-	--font6: 'Style Script', cursive;
-	--font7: 'VT323', monospace;
+	--font1: "Barlow Semi Condensed", sans-serif;
+	--font2: "Bungee Shade", cursive;
+	--font3: "Cinzel Decorative", cursive;
+	--font4: "Lexend Tera", sans-serif;
+	--font5: "Playfair Display", serif;
+	--font6: "Style Script", cursive;
+	--font7: "VT323", monospace;
 }
 
-.book {
-	transition: opacity 0.4s 0.2s;
-	perspective: 250vw;
-	position: relative;
-	transform: translateX(-25%);
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	transition: .5s;
-}
-.book.toRight {
-	transform: translateX(0);
-}
-.book.toLeft {
-	transform: translateX(25%);
-}
-.book .pages {
-	width: 58vw;
-	height: 42vw;
-	position: relative;
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
-	border-radius: 4px;
-}
-.book .page {
-	width: 50%;
-	height: 100%;
-	background: #111111;
-	background-image: url("https://media.istockphoto.com/id/512296120/vector/old-paper-background-with-vintage-ornate-border.jpg?s=612x612&w=0&k=20&c=_0OiMXcMe0Cc83kdFmJms6ct87Qh_lVOA4bSDvm2Zd8=") !important;
-	background-size: cover;
-	box-shadow: 2px 2px 5px #00000080, inset 2px 2px 5px #ffffff80;
-	backface-visibility: hidden;
-	color: #000000;
-	display: flex;
-	flex-direction: column;
-	padding: 5%;
-	padding-top: 13%;
-	font-size: 1.7vw;
-	position: absolute;
-	top: 0;
-	transform-origin: 0 0;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
-	cursor: grab;
-	user-select: none;
-	overflow: hidden;
-}
-.book .page h3 {
-	font-size: 1.6vw;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 10%;
-}
-.book .page ul {
-	list-style: circle inside;
-	font-size: 1.7vw;
-	line-height: 150%;
-}
-.book .page p {
-	font-size: 1.4vw;
-	margin-bottom: 0 !important;
-	line-height: 150%;
-	width: 100% !important;
-}
-.book .page#backCover {
-	background-image: url("https://media.istockphoto.com/id/173946498/photo/antique-leather-book-cover.jpg?s=612x612&w=0&k=20&c=99huUDllP1OM0PuZWySoU5HvHZukRsOBb75OAlmUBVs=") !important;
-}
-.book .page:nth-child(even) {
-	clear: both;
-}
-.book .page:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0);
-	transition: background 0.7s;
-	z-index: 2;
-}
-.book .page:nth-child(odd) {
-	pointer-events: all;
-	transform: rotateY(0deg);
-	right: 0;
-	border-radius: 0 4px 4px 0;
-	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%);
-}
-.book .page:nth-child(odd):hover {
-	transform: rotateY(-20deg);
-}
-.book .page:nth-child(odd):hover:before {
-	background: rgba(0, 0, 0, 0.03);
-}
-.book .page:nth-child(odd):before {
-	background: rgba(0, 0, 0, 0);
-}
-.book .page:nth-child(even) {
-	pointer-events: none;
-	transform: rotateY(180deg);
-	transform-origin: 100% 0;
-	left: 0;
-	border-radius: 4px 0 0 4px;
-	border-color: black;
-	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%);
-}
-.book .page:nth-child(even):before {
-	background: rgba(0, 0, 0, 0.2);
-}
-.book .page.grabbing {
-	transition: none;
-}
-.book .page.flipped:nth-child(odd) {
-	pointer-events: none;
-	transform: rotateY(-180deg);
-}
-.book .page.flipped:nth-child(odd):before {
-	background: rgba(0, 0, 0, 0.2);
-}
-.book .page.flipped:nth-child(even) {
-	pointer-events: all;
-	transform: rotateY(0deg);
-}
-.book .page.flipped:nth-child(even):hover {
-	transform: rotateY(20deg);
-}
-.book .page.flipped:nth-child(even):hover:before {
-	background: rgba(0, 0, 0, 0.03);
-}
-.book .page.flipped:nth-child(even):before {
-	background: rgba(0, 0, 0, 0);
-}
-.book .page:nth-child(odd) {
-	background-position: right top;
+@media (min-width: 800px) {
+	.book {
+		transition: opacity 0.4s 0.2s;
+		perspective: 250vw;
+		position: relative;
+		transform: translateX(-25%);
+		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+		transition: 0.5s;
+	}
+	.book.toRight {
+		transform: translateX(0);
+	}
+	.book.toLeft {
+		transform: translateX(25%);
+	}
+	.book .pages {
+		width: 120vh;
+		height: 90vh;
+		position: relative;
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
+		border-radius: 4px;
+	}
+	.book .page {
+		width: 50%;
+		height: 100%;
+		background: #111111;
+		background-image: url("https://media.istockphoto.com/id/512296120/vector/old-paper-background-with-vintage-ornate-border.jpg?s=612x612&w=0&k=20&c=_0OiMXcMe0Cc83kdFmJms6ct87Qh_lVOA4bSDvm2Zd8=") !important;
+		background-size: cover;
+		box-shadow: 2px 2px 5px #00000080, inset 2px 2px 5px #ffffff80;
+		backface-visibility: hidden;
+		color: #000000;
+		display: flex;
+		flex-direction: column;
+		padding: 5%;
+		padding-top: 13%;
+		font-size: 1.15rem;
+		position: absolute;
+		top: 0;
+		transform-origin: 0 0;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+		cursor: grab;
+		user-select: none;
+		overflow: hidden;
+	}
+	.book .page h3 {
+		font-size: 1.4rem;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 10%;
+	}
+	.book .page ul {
+		list-style: circle inside;
+		line-height: 150%;
+	}
+	.book .page p {
+		margin-bottom: 0 !important;
+		line-height: 150%;
+		width: 100% !important;
+	}
+	.book .page#backCover {
+		background-image: url("https://media.istockphoto.com/id/173946498/photo/antique-leather-book-cover.jpg?s=612x612&w=0&k=20&c=99huUDllP1OM0PuZWySoU5HvHZukRsOBb75OAlmUBVs=") !important;
+	}
+	.book .page:nth-child(even) {
+		clear: both;
+	}
+	.book .page:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0);
+		transition: background 0.7s;
+		z-index: 2;
+	}
+	.book .page:nth-child(odd) {
+		pointer-events: all;
+		transform: rotateY(0deg);
+		right: 0;
+		border-radius: 0 4px 4px 0;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%);
+	}
+	.book .page:nth-child(odd):hover {
+		transform: rotateY(-20deg);
+	}
+	.book .page:nth-child(odd):hover:before {
+		background: rgba(0, 0, 0, 0.03);
+	}
+	.book .page:nth-child(odd):before {
+		background: rgba(0, 0, 0, 0);
+	}
+	.book .page:nth-child(even) {
+		pointer-events: none;
+		transform: rotateY(180deg);
+		transform-origin: 100% 0;
+		left: 0;
+		border-radius: 4px 0 0 4px;
+		border-color: black;
+		background-image: linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 10%);
+	}
+	.book .page:nth-child(even):before {
+		background: rgba(0, 0, 0, 0.2);
+	}
+	.book .page.grabbing {
+		transition: none;
+	}
+	.book .page.flipped:nth-child(odd) {
+		pointer-events: none;
+		transform: rotateY(-180deg);
+	}
+	.book .page.flipped:nth-child(odd):before {
+		background: rgba(0, 0, 0, 0.2);
+	}
+	.book .page.flipped:nth-child(even) {
+		pointer-events: all;
+		transform: rotateY(0deg);
+	}
+	.book .page.flipped:nth-child(even):hover {
+		transform: rotateY(20deg);
+	}
+	.book .page.flipped:nth-child(even):hover:before {
+		background: rgba(0, 0, 0, 0.03);
+	}
+	.book .page.flipped:nth-child(even):before {
+		background: rgba(0, 0, 0, 0);
+	}
+	.book .page:nth-child(odd) {
+		background-position: right top;
+	}
+
+	.book .page#cover {
+		background: url("https://media.istockphoto.com/id/173946498/photo/antique-leather-book-cover.jpg?s=612x612&w=0&k=20&c=99huUDllP1OM0PuZWySoU5HvHZukRsOBb75OAlmUBVs=") no-repeat center center !important;
+		background-size: cover !important;
+		text-shadow: 2px 2px 2px #000000d0;
+		font-family: var(--font3);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 3rem;
+		padding: 0;
+		margin: 0;
+	}
+	.book #cover div:first-child {
+		position: absolute;
+		color: rgba(0, 166, 0, 0.679);
+		top: 30%;
+	}
+	.book #cover div:nth-child(2) {
+		position: absolute;
+		color: #ff5555;
+		font-size: 1rem;
+		bottom: 12%;
+	}
 }
 
-.book .page#cover {
-	background: url("https://media.istockphoto.com/id/173946498/photo/antique-leather-book-cover.jpg?s=612x612&w=0&k=20&c=99huUDllP1OM0PuZWySoU5HvHZukRsOBb75OAlmUBVs=") no-repeat center center !important;
-	background-size: cover !important;
-	text-shadow: 2px 2px 2px #000000d0;
-	font-family: var(--font3);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 5vw;
-	padding: 0;
-	margin: 0;
-}
-.book #cover div:first-child {
-	position: absolute;
-	color: rgba(0, 166, 0, 0.679);
-	top: 30%;
-}
-.book #cover div:nth-child(2) {
-	position: absolute;
-	color: #ff5555;
-	font-size: 2vw;
-	bottom: 12%;
+@media (width < 800px) {
+	.book {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+	#cover div:nth-child(1) {
+		display: none;
+	}
+	#cover {
+		text-align: center;
+		font-size: 1.5rem;
+	}
+	.page {
+		padding: 20px;
+		background-color: #000000d0;
+		border-radius: 5px;
+		width: 90vw;
+	}
+	.page p {
+		margin-bottom: 0px !important;
+		max-width: 85vw;
+	}
+	#backCover {
+		display: none;
+	}
 }

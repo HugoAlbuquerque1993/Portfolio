@@ -82,15 +82,12 @@ header nav {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	min-width: 450px;
-	width: 45vw;
 	height: fit-content;
 	font-size: 0.9rem;
 	text-transform: uppercase;
 }
 header ul {
 	display: flex;
-	width: 100%;
 	justify-content: space-between;
 	list-style: none;
 	text-align: center;
@@ -229,18 +226,11 @@ main #Perfil p {
 	text-indent: 30px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 	header {
-		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		padding: 0 30px;
-		width: 100vw;
-		height: 15vh;
 		min-height: 50px;
-		transition: 0.5s;
-		animation: headerFade 1.5s ease-in-out;
-		z-index: 2;
 	}
 	header.slideHeader {
 		height: 8vh;
@@ -250,7 +240,7 @@ main #Perfil p {
 		top: 0px;
 		left: 100vw;
 		transition: 0.5s;
-		background-color: #00000080;
+		background-color: #000000c0;
 		width: 100vw;
 		height: 100vh;
 	}

@@ -83,35 +83,6 @@
 						</div>
 					</div>
 
-					<div class="card" style="width: 16rem">
-						<img src="./img/" class="card-img-top" alt="..." />
-
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-
-					<div class="card" style="width: 16rem">
-						<img src="./img/" class="card-img-top" alt="..." />
-
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
-
-					<div class="card" style="width: 16rem">
-						<img src="./img/" class="card-img-top" alt="..." />
-
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					</div>
 					<a class="material-symbols-outlined goDown" id="toPerfil" href="#Perfil"> expand_more </a>
 				</div>
 			</section>
@@ -181,25 +152,33 @@
 			const navBar = document.querySelector(".navBar")
 			const openMenu = document.querySelector("#openMenu")
 			var gate = false
-			openMenu.addEventListener("click", () => {
+			openMenu.addEventListener("click", openMenuFunc)
+			function openMenuFunc() {
 				navBar.style.left = 0
 				openMenu.style.opacity = 0
 				openMenu.style.zIndex = -1
 				gate = true
-			})
+			}
 
 			const closeMenuArr = [...document.querySelectorAll(".navBar > ul > *")]
 			closeMenuArr.forEach((el) => {
 				el.addEventListener("click", closeMenuFunc)
 			})
 			function closeMenuFunc(e) {
-				if (gate == true) {
+				if (window.innerWidth <= 900) {
 					navBar.style.left = "100vw"
 					openMenu.style.opacity = 1
 					openMenu.style.zIndex = 0
 					gate = false
 				}
 			}
+			window.addEventListener("resize", () => {
+				if (window.innerWidth > 900) {
+					openMenuFunc()
+				} else {
+					closeMenuFunc()
+				}
+			})
 		</script>
 	</body>
 </html>
