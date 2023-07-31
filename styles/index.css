@@ -190,6 +190,7 @@ main #Projetos {
 	position: relative;
 	background-size: cover;
 	width: 100vw;
+	text-align: center;
 }
 main #Projetos .projectsTop {
 	display: flex;
