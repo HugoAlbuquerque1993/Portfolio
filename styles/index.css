@@ -193,8 +193,9 @@ main #Projetos {
 }
 main #Projetos .projectsTop {
 	display: flex;
+	align-items: center;
 	justify-content: space-around;
-	height: 98vh;
+	height: 75vh;
 }
 main #Projetos .projectsTop .card img {
 	max-width: 300px;
@@ -210,6 +211,7 @@ main #Perfil {
 	padding: 50px;
 	color: #8ae3eb;
 	background: url(../img/back02.jpg) no-repeat center center fixed;
+	background-size: cover;
 }
 main #Perfil article {
 	width: 100%;
